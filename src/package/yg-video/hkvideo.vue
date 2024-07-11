@@ -21,14 +21,14 @@ export default {
     immediate: true,
     handler(newVal, oldVal) {
       if(newVal){
-        this.camera152 = newVal
+        this.ygCamera = newVal
         this.newId = newVal.id;
         let t = newVal.loadingTime || 1000
         setTimeout(() => {
            this.initS();
         },t)
       }else{
-        this.camera152 = {
+        this.ygCamera = {
             szIP: "192.168.1.218", //IP地址
             szPort: "80", //端口号
             szUsername: "admin", //用户名
@@ -47,7 +47,7 @@ export default {
   },
   data() {
     return {
-      camera152:{},
+      ygCamera:{},
       newId:null
     };
   },
@@ -58,7 +58,7 @@ export default {
   },
   methods: {
 	handleXXX(){
-		var szDeviceIdentify = this.camera152.szIP+'_'+this.camera152.szPort;
+		var szDeviceIdentify = this.ygCamera.szIP+'_'+this.ygCamera.szPort;
 		this.$emit('desPlug',szDeviceIdentify);
 	},
    async initS() {
@@ -97,8 +97,8 @@ export default {
       setTimeout(() => {
         let cw = Math.round(document.body.clientWidth/1920);
         let ch = Math.round(document.body.clientHeight/1080);
-        let width = parseInt((this.camera152.width*cw),10);
-        let height = parseInt((this.camera152.height*ch),10);
+        let width = parseInt((this.ygCamera.width*cw),10);
+        let height = parseInt((this.ygCamera.height*ch),10);
         if(height <= 200){ height = 200; }
         if(width <= 200){ width = 200; }
         // 对窗口大小重新规划
@@ -118,10 +118,10 @@ export default {
     // 登录
     clickLogin() {
       let that = this;
-      var szIP = this.camera152.szIP,
-        szPort = this.camera152.szPort,
-        szUsername = this.camera152.szUsername,
-        szPassword = this.camera152.szPassword;
+      var szIP = this.ygCamera.szIP,
+        szPort = this.ygCamera.szPort,
+        szUsername = this.ygCamera.szUsername,
+        szPassword = this.ygCamera.szPassword;
         const iRet =  WebVideoCtrl.I_Login(szIP, 1, szPort, szUsername, szPassword, {
           timeout: 3000,
           success: function (xmlDoc) {
@@ -146,7 +146,7 @@ export default {
 
     // 获取端口
     getDevicePort() {
-      var szDeviceIdentify = this.camera152.szIP;
+      var szDeviceIdentify = this.ygCamera.szIP;
       if (null == szDeviceIdentify) {
         return;
       }
@@ -157,7 +157,7 @@ export default {
     // 获取通道
     async getChannelInfo() {
       let that = this;
-      var szDeviceIdentify = this.camera152.szIP+'_'+this.camera152.szPort;
+      var szDeviceIdentify = this.ygCamera.szIP+'_'+this.ygCamera.szPort;
 
       if (null == szDeviceIdentify) {
         return;
@@ -194,8 +194,8 @@ export default {
       let that = this;
       var g_iWndIndex = 0;
       var oWndInfo = WebVideoCtrl.I_GetWindowStatus(g_iWndIndex) || null;
-      var szDeviceIdentify = this.camera152.szIP+'_'+this.camera152.szPort,
-        iChannelID = this.camera152.iChannelID,// 5=>4楼测试电子    2=>4楼前台    1=>4楼后门
+      var szDeviceIdentify = this.ygCamera.szIP+'_'+this.ygCamera.szPort,
+        iChannelID = this.ygCamera.iChannelID,// 5=>4楼测试电子    2=>4楼前台    1=>4楼后门
         bZeroChannel = false;
       if ("undefined" === typeof iStreamType) {
         iStreamType = 1;
@@ -256,8 +256,8 @@ export default {
     setStyle(){
       let elem = document.getElementsByClassName('bot-one');
       let w = elem.offsetWidth,h = elem.offsetHeight;
-      document.getElementById(this.camera152.id).style.width = width+'px'
-      document.getElementById(this.camera152.id).style.height = height+'px'
+      document.getElementById(this.ygCamera.id).style.width = width+'px'
+      document.getElementById(this.ygCamera.id).style.height = height+'px'
     }
   },
   beforeDestroy(){
