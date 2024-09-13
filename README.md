@@ -1,7 +1,7 @@
 [博客](https://juejin.cn/post/7369783680425852938) |
 [NPM地址](https://www.npmjs.com/~yg331886820)  |
-[git源码](https://github.com/331886820/yg-video) |
-[gitee源码](https://gitee.com/esthergege/live-video)
+[git源码](https://github.com/331886820/yg-video.git) |
+[gitee源码](https://gitee.com/yg331886820/live-video)
 
 # 本示例 只展示海康威视 demo 运行结果如下图
 ![0711](https://github.com/331886820/yg-video/assets/29726492/67145c8e-1672-4fa3-a4dc-a176f0ef9cf9)
