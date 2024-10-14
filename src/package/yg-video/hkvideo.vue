@@ -32,7 +32,7 @@ export default {
             szIP: "192.168.1.218", //IP地址
             szPort: "80", //端口号
             szUsername: "admin", //用户名
-            szPassword: "gi123456", //管理员密码
+            szPassword: "123456", //管理员密码
             iChannelID: 5,
             loadingTime: "3000",
             width: "800",
