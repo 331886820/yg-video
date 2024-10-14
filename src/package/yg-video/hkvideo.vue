@@ -32,7 +32,7 @@ export default {
             szIP: "192.168.1.218", //IP地址
             szPort: "80", //端口号
             szUsername: "admin", //用户名
-            szPassword: "yao123456", //管理员密码
+            szPassword: "gi123456", //管理员密码
             iChannelID: 5,
             loadingTime: "3000",
             width: "800",
@@ -52,7 +52,7 @@ export default {
     };
   },
   mounted() {
-    console.log('插件下载地址：http://139.198.123.106:10191/bpstatic/webSDKPlugin/HCWebSDKPlugin.exe');
+    console.log('插件下载地址：/webSDKPlugin/HCWebSDKPlugin.exe');
     // this.initS();
     window.addEventListener("resize", this.viewReload)
   },
